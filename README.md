@@ -1,2 +1,3 @@
-# project_euler_sols
-My solutions for Project Euler problems. Solutions are in Python.
+# Project Euler Solutions
+
+My solutions for the Project Euler problems. All the solutions are in Python.
