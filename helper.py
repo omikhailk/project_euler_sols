@@ -1,3 +1,5 @@
+import time
+
 """
 This file is a helper module which will contain
 important functions which I may use again in
@@ -56,29 +58,28 @@ def prime_sieve(limit):
 	This function is an algorithm for finding
 	the primes upto a certain number.
 
-	This version of the algorithm is not the optimised
+	This version of the algorithm is not the most optimised
 	one.
 
 	The algorithm is called 'The Sieve of 
 	Eratosthenes'
 	"""
-	number_list = [i for i in range(2, limit + 1)]
+	number_list = [[i, True] for i in range(3, limit + 1, 2)]
+	current_p = 3
+	result_primes = [2]
 	marked_nums = []
-	result_primes = []
-	current_p = 2
 	while current_p ** 2 <= limit:
 		for i in number_list:
-			if i != current_p and i % current_p == 0:
-				marked_nums.append(i)
+			if i[0] % current_p == 0 and i[0] != current_p:
+				i[1] = False
 		for i in number_list:
-			if i > current_p and i not in marked_nums:
-				current_p = i
+			if i[0] > current_p and i[1] == True:
+				current_p = i[0]
 				break
 	for i in number_list:
-		if i not in marked_nums:
-			result_primes.append(i)
+		if i[1] == True:
+			result_primes.append(i[0])
 	return result_primes
-
 
 if __name__ == "__main__":
 	pass
