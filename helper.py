@@ -51,5 +51,34 @@ def prime_finder(index):
 		current_number += 2
 	return current_prime
 
+def prime_sieve(limit):
+	"""
+	This function is an algorithm for finding
+	the primes upto a certain number.
+
+	This version of the algorithm is not the optimised
+	one.
+
+	The algorithm is called 'The Sieve of 
+	Eratosthenes'
+	"""
+	number_list = [i for i in range(2, limit + 1)]
+	marked_nums = []
+	result_primes = []
+	current_p = 2
+	while current_p ** 2 <= limit:
+		for i in number_list:
+			if i != current_p and i % current_p == 0:
+				marked_nums.append(i)
+		for i in number_list:
+			if i > current_p and i not in marked_nums:
+				current_p = i
+				break
+	for i in number_list:
+		if i not in marked_nums:
+			result_primes.append(i)
+	return result_primes
+
+
 if __name__ == "__main__":
 	pass
