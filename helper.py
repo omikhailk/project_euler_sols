@@ -17,7 +17,7 @@ def fib(term):
 	elif term > 1:
 		return fib(term - 1) + fib(term - 2)
 
-def prime_factorisation_primality(num):
+def prime_factorisation_primality(num, trivial):
 	"""
 	This function will return the prime factors
 	and the primality of a given number.
@@ -36,6 +36,8 @@ def prime_factorisation_primality(num):
 			trial_factor += 1
 		if len(prime_factors) > 1:
 			primality = False
+	if trivial == True:
+		prime_factors.append(1)
 	return [prime_factors, primality]
 
 def prime_finder(index):
@@ -61,7 +63,7 @@ def prime_sieve(limit):
 	This version of the algorithm is not the most optimised
 	one.
 
-	The algorithm is called 'The Sieve of 
+	The algorithm is called 'The Sieve of
 	Eratosthenes'
 	"""
 	number_list = [[i, True] for i in range(3, limit + 1, 2)]
@@ -80,6 +82,14 @@ def prime_sieve(limit):
 		if i[1] == True:
 			result_primes.append(i[0])
 	return result_primes
+
+def t_num_generator(term_range):
+	"""
+	Will generate the triangular numbers uptill term_range
+	in a list.
+	"""
+	result = [(i * (i + 1) / 2) for i in range(0, term_range)]
+	return result
 
 if __name__ == "__main__":
 	pass
