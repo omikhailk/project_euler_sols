@@ -1,5 +1,3 @@
-import time
-
 """
 This file is a helper module which will contain
 important functions which I may use again in
@@ -38,7 +36,7 @@ def prime_factorisation_primality(num, trivial):
 			primality = False
 	if trivial == True:
 		prime_factors.append(1)
-	return [prime_factors, primality]
+	return prime_factors, primality
 
 def prime_finder(index):
 	"""
@@ -49,7 +47,7 @@ def prime_finder(index):
 	current_prime = 2
 	current_number = 3
 	while count < index:
-		if prime_factorisation_primality(current_number)[1] == True:
+		if prime_factorisation_primality(current_number, False)[1] == True:
 			count += 1
 			current_prime = current_number
 		current_number += 2
