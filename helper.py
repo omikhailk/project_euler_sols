@@ -4,6 +4,10 @@ important functions which I may use again in
 other problems
 """
 
+# This decorator will allow use of memoization
+from functools import lru_cache
+
+@lru_cache(maxsize = 3000)
 def fib(term):
 	"""
 	This is a recursive fibonacci function.
