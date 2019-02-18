@@ -13,8 +13,8 @@ def is_prime(num):
 
 def prime_finder(index):
 	"""
-	Will find the Nth prime, where the Nth
-	prime is the index parameter.
+	Will find the Nth prime, where the value
+	of N is the index parameter.
 	"""
 	count = 1
 	current_prime = 2
