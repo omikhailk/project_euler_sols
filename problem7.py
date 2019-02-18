@@ -12,6 +12,10 @@ def is_prime(num):
 	return True
 
 def prime_finder(index):
+	"""
+	Will find the Nth prime, where the Nth
+	prime is the index parameter.
+	"""
 	count = 1
 	current_prime = 2
 	current_number = 3
