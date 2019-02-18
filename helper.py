@@ -1,10 +1,10 @@
 """
-This file is a helper module which will contain
-important functions which I may use again in
-other problems
+This file is a helper module which will contain 
+important functions which I may use again in 
+other problems.
 """
 
-# This decorator will allow use of memoization
+# This decorator will allow the use of memoization.
 from functools import lru_cache
 
 @lru_cache(maxsize = 3000)
@@ -21,8 +21,11 @@ def fib(term):
 
 def prime_factorisation_primality(num, trivial):
 	"""
-	This function will return the prime factors
-	and the primality of a given number.
+	This function will return the prime factors 
+	and the primality of a given number. If the 
+	trivial parameter is False then 1 will not 
+	be included as a "prime" factor. Otherwise 
+	it will.
 	"""
 	prime_factors = []
 	trial_factor = 2
@@ -44,8 +47,8 @@ def prime_factorisation_primality(num, trivial):
 
 def prime_finder(index):
 	"""
-	This program will find the prime with the index
-	you want.
+	This program will find the Nth prime, where 
+	the Nth term is the parameter index.
 	"""
 	count = 1
 	current_prime = 2
@@ -59,14 +62,14 @@ def prime_finder(index):
 
 def prime_sieve(limit):
 	"""
-	This function is an algorithm for finding
+	This function is an algorithm for finding 
 	the primes upto a certain number.
 
 	This version of the algorithm is not the most optimised
 	one.
 
-	The algorithm is called 'The Sieve of
-	Eratosthenes'
+	The algorithm is called 'The Sieve of 
+	Eratosthenes'.
 	"""
 	number_list = [[i, True] for i in range(3, limit + 1, 2)]
 	current_p = 3
@@ -87,7 +90,7 @@ def prime_sieve(limit):
 
 def t_num_generator(term_range):
 	"""
-	Will generate the triangular numbers uptill term_range
+	Will generate the triangular numbers uptill term_range 
 	in a list.
 	"""
 	result = [(i * (i + 1) / 2) for i in range(0, term_range)]
