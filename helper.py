@@ -48,7 +48,7 @@ def prime_factorisation_primality(num, trivial):
 def prime_finder(index):
 	"""
 	This program will find the Nth prime, where 
-	the Nth term is the parameter index.
+	the value of N is the parameter index.
 	"""
 	count = 1
 	current_prime = 2
