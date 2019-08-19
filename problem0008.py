@@ -1,11 +1,11 @@
 def largest_product():
-	"""
-	This code will look through the number below and try
-	and find the largest product that can be made
-	by multiplying 13 adjacent digits inside this 1000
-	digit number.
-	"""
-	num = "73167176531330624919225119674426574742355349194934\
+    """
+    This code will look through the number below and try
+    and find the largest product that can be made
+    by multiplying 13 adjacent digits inside this 1000
+    digit number.
+    """
+    num = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
 12540698747158523863050715693290963295227443043557\
@@ -25,24 +25,25 @@ def largest_product():
 84580156166097919133875499200524063689912560717606\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
-	biggest_number = 0
-	results = []
-	for i in range(0, len(num) - 13):
-		product = 1
-		product_indexs = [int(num[w]) for w in range(i, i + 13)]
-		"""
-		The code above will convert the 13 digit long substring
-		to a list with it's individual digits as integers, so
-		that we can do calculations with them.
+    biggest_number = 0
+    results = []
+    for i in range(0, len(num) - 13):
+        product = 1
+        product_indexs = [int(num[w]) for w in range(i, i + 13)]
+        """
+        The code above will convert the 13 digit long substring
+        to a list with it's individual digits as integers, so
+        that we can do calculations with them.
 
-		The code below will loop through that list and multiply
-		those numbers by the product, which is initially set to
-		1.
-		"""
-		for z in product_indexs:
-			product *= z
-		if product != 0:
-			results.append(product)
-	return max(results)
+        The code below will loop through that list and multiply
+        those numbers by the product, which is initially set to
+        1.
+        """
+        for z in product_indexs:
+            product *= z
+        if product != 0:
+            results.append(product)
+    return max(results)
+
 
 print(largest_product())
