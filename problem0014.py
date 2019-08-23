@@ -10,17 +10,22 @@ def collatz(num):
     return (original_num, iterations)
 
 
-results = []
-start_num = 2
-while start_num < 1000000:
-    results.append(collatz(start_num))
-    start_num += 1
+def main():
+    results = []
+    start_num = 2
+    while start_num < 1000000:
+        results.append(collatz(start_num))
+        start_num += 1
 
-max_iter = 1
-for i in results:
-    if i[1] > max_iter:
-        max_iter = i[1]
+    max_iter = 1
+    for i in results:
+        if i[1] > max_iter:
+            max_iter = i[1]
 
-for i in results:
-    if i[1] == max_iter:
-        print(i[0])
+    for i in results:
+        if i[1] == max_iter:
+            print(i[0])
+
+
+if __name__ == '__main__':
+    main()

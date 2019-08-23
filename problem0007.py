@@ -21,11 +21,16 @@ def prime_finder(index):
     current_prime = 2
     current_number = 3
     while count < index:
-        if is_prime(current_number) == True:
+        if is_prime(current_number):
             count += 1
             current_prime = current_number
         current_number += 2
     return current_prime
 
 
-print(prime_finder(10001))
+def main():
+    print(prime_finder(10001))
+
+
+if __name__ == '__main__':
+    main()

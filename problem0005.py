@@ -18,4 +18,9 @@ def smallest_multiple(num_limit):
         continue
 
 
-print(smallest_multiple(20))
+def main():
+    print(smallest_multiple(20))
+
+
+if __name__ == '__main__':
+    main()

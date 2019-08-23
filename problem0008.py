@@ -46,4 +46,9 @@ def largest_product():
     return max(results)
 
 
-print(largest_product())
+def main():
+    print(largest_product())
+
+
+if __name__ == '__main__':
+    main()

@@ -18,4 +18,9 @@ def sum_square_diff(limit_num):
     return square_of_sum - sum_of_squares
 
 
-print(sum_square_diff(100))
+def main():
+    print(sum_square_diff(100))
+
+
+if __name__ == '__main__':
+    main()

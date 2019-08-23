@@ -7,4 +7,9 @@ def sum_of_multiples(limit):
     return sum(multiples)
 
 
-print(sum_of_multiples(1000))
+def main():
+    print(sum_of_multiples(1000))
+
+
+if __name__ == '__main__':
+    main()

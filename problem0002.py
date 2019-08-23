@@ -26,4 +26,9 @@ def even_valued_terms(limit):
     return sum(even_values)
 
 
-print(even_valued_terms(4000000))
+def main():
+    print(even_valued_terms(4000000))
+
+
+if __name__ == '__main__':
+    main()

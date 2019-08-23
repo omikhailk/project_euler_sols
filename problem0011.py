@@ -63,7 +63,12 @@ def top_to_bottom_diag_left(grid):
     return max(diag_result)
 
 
-print(right_search(data))
-print(up_search(data))
-print(top_to_bottom_diag_right(data))
-print(top_to_bottom_diag_left(data))
+def main():
+    print(right_search(data))
+    print(up_search(data))
+    print(top_to_bottom_diag_right(data))
+    print(top_to_bottom_diag_left(data))
+
+
+if __name__ == '__main__':
+    main()

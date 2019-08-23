@@ -12,4 +12,9 @@ def biggest_prime_factor(num):
     return prime_factors
 
 
-print(biggest_prime_factor(600851475143))
+def main():
+    print(biggest_prime_factor(600851475143))
+
+
+if __name__ == '__main__':
+    main()

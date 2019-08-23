@@ -16,4 +16,9 @@ def pythagorean_triplets(sum_value):
                         return x * y * z
 
 
-print(pythagorean_triplets(1000))
+def main():
+    print(pythagorean_triplets(1000))
+
+
+if __name__ == '__main__':
+    main()

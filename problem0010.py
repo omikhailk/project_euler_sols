@@ -13,4 +13,9 @@ def sum_of_primes(limit):
     return sum(prime_sieve(limit))
 
 
-print(sum_of_primes(2000000))
+def main():
+    print(sum_of_primes(2000000))
+
+
+if __name__ == '__main__':
+    main()

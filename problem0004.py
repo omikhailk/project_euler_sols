@@ -19,4 +19,9 @@ def largest_palindrome_product(digits):
     return palindromes
 
 
-print(largest_palindrome_product(3))
+def main():
+    print(largest_palindrome_product(3))
+
+
+if __name__ == '__main__':
+    main()
