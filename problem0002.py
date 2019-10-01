@@ -1,34 +1,40 @@
-def fib(term):
-    """
-    This is a recursive fibonacci function.
-    """
-    if term == 1:
-        return 1
-    if term == 2:
-        return 2
-    elif term > 1:
-        return fib(term - 1) + fib(term - 2)
+"""
+By considering the terms in the Fibonacci
+sequence whose values do not exceed four
+million, find the sum of the even-valued terms.
+"""
 
 
-def even_valued_terms(limit):
-    """
-    This function will find and sum up all of
-    the even valued terms of the fibonacci
-    sequence as long as the terms are less
-    than or equal to the limit.
-    """
-    even_values = []
-    i = 1
-    while fib(i) <= limit:
-        if fib(i) % 2 == 0:
-            even_values.append(fib(i))
-        i += 1
-    return sum(even_values)
+from helper import fib, golden_ratio
+from math import floor, log
 
+
+def index_limit_det(limit):
+    """
+    Determines the term which was responsible for
+    the limit parameter/it's fibonacci value.
+    The formula used can be found on:
+    https://bit.ly/2p3Ectu
+    """
+    
+    return floor(log((limit * (5 ** 0.5) + 0.5), golden_ratio))
+
+
+def even_sum(limit):
+    """
+    Finds the sum of all of the even-valued terms
+    in the fibonacci sequence which are below
+    the limit parameter.
+    """
+
+    print(index_limit_det(limit))
+    terms = [fib(i) for i in range(1, index_limit_det(limit)) if fib(i) % 2]
+    return sum(terms)
+    
 
 def main():
-    print(even_valued_terms(4000000))
-
+    print(even_sum(4000000))
+    
 
 if __name__ == '__main__':
     main()
