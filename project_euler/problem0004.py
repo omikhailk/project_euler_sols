@@ -1,27 +1,32 @@
-def largest_palindrome_product(digits):
+from sys import exit
+
+
+def palindrome_product_solver(digits):
     """
-    This will return the largest palindromic number
-    made from the product of two N digit numbers.
+    Loops through two numbers each having
+    digits equal to the digits variable.
+
+    Then finds and returns the largest
+    palindromic product of those two
+    numbers.
     """
-
-    palindromes = []
-    lower_bounds = 10 ** (digits - 1)
-    upper_bounds = int("9" * digits)
-
-    for i in range(upper_bounds, lower_bounds, -1):
-        for w in range(i, lower_bounds, -1):
-            number = str(i * w)
-            if number == number[::-1]:
-                palindromes.append(int(number))
-            palindromes.sort()
-            if len(palindromes) > 1:
-                palindromes = [palindromes[-1]]
-    return palindromes
-
+    if digits == 0:
+        print("Exiting program.")
+        exit
+    else:
+        start = 10 ** (digits - 1)
+        end = 10 ** digits
+    palindromes = set()
+    for i in range(start, end):
+        for w in range(i, end):
+            if str(i * w) == str(i * w)[::-1]:
+                palindromes.add(i * w)
+    return max(palindromes)
+            
 
 def main():
-    print(largest_palindrome_product(3))
+    print(palindrome_product_solver(3))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
