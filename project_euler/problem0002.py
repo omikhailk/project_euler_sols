@@ -16,6 +16,7 @@ def index_limit_det(limit):
     The formula used can be found on:
     https://bit.ly/2p3Ectu
     """
+    
     return floor(log((limit * (5 ** 0.5) + 0.5), golden_ratio))
 
 
@@ -25,6 +26,7 @@ def even_sum(limit):
     in the fibonacci sequence which are below
     the `limit` number.
     """
+
     terms = [fib(i) for i in range(1, index_limit_det(limit)) if not fib(i) % 2]
     return sum(terms)
     
