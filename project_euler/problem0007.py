@@ -1,3 +1,8 @@
+"""
+What is the 10,001st prime number?
+"""
+
+
 def is_prime(num):
     trial_factor = 2
     primes = []

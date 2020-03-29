@@ -1,3 +1,9 @@
+"""
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.
+"""
+
+
 def pythagorean_triplets(sum_value):
     """
     This program will find the three Pythagorean

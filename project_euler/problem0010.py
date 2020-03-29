@@ -1,3 +1,8 @@
+"""
+Find the sum of all the primes below two million.
+"""
+
+
 from helper import prime_sieve
 
 

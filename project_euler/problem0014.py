@@ -1,3 +1,9 @@
+"""
+Which starting number, under one million, produces the longest chain in the
+Collatz sequence?
+"""
+
+
 def collatz(num):
     original_num = num
     iterations = 0
