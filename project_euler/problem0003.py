@@ -1,4 +1,12 @@
+"""
+
+"""
+
+
 def biggest_prime_factor(num):
+    """
+    Uses the trial divison method to find prime factors
+    """
     prime_factors = []
     trial_factor = 2
     while num != 1:
