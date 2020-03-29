@@ -5,11 +5,11 @@ other problems.
 """
 
 
-golden_ratio = (1 + 5 ** 0.5) / 2
-
-
 # This decorator will allow the use of memoization.
 from functools import lru_cache
+
+
+golden_ratio = (1 + 5 ** 0.5) / 2
 
 
 @lru_cache(maxsize=3000)
