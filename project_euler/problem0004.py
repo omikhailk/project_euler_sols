@@ -1,10 +1,15 @@
+"""
+Find the largest palindrome made from the product of two 3-digit numbers.
+"""
+
+
 from sys import exit
 
 
 def palindrome_product_solver(digits):
     """
     Loops through two numbers each having
-    digits equal to the digits variable.
+    digits equal to the `digits` variable.
 
     Then finds and returns the largest
     palindromic product of those two
