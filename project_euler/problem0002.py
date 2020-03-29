@@ -12,7 +12,7 @@ from math import floor, log
 def index_limit_det(limit):
     """
     Determines the term which was responsible for
-    the limit parameter/it's fibonacci value.
+    the (`limit` number)'s fibonacci value.
     The formula used can be found on:
     https://bit.ly/2p3Ectu
     """
@@ -24,11 +24,10 @@ def even_sum(limit):
     """
     Finds the sum of all of the even-valued terms
     in the fibonacci sequence which are below
-    the limit parameter.
+    the `limit` number.
     """
 
-    print(index_limit_det(limit))
-    terms = [fib(i) for i in range(1, index_limit_det(limit)) if fib(i) % 2]
+    terms = [fib(i) for i in range(1, index_limit_det(limit)) if not fib(i) % 2]
     return sum(terms)
     
 
