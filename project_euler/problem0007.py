@@ -3,38 +3,19 @@ What is the 10,001st prime number?
 """
 
 
-def is_prime(num):
-    trial_factor = 2
-    primes = []
-    while num != 1:
-        if num % trial_factor == 0:
-            primes.append(trial_factor)
-            num /= trial_factor
-        else:
-            trial_factor += 1
-        if len(primes) > 1:
-            return False
-    return True
+from helper import upper_bound, prime_sieve
 
 
-def prime_finder(index):
+def nth_prime(n):
     """
-    Will find the Nth prime, where the value
-    of N is the index parameter.
+    Will return the last prime number (the `n`-th one) from the list of primes
+    generated using the `prime_sieve` function.
     """
-    count = 1
-    current_prime = 2
-    current_number = 3
-    while count < index:
-        if is_prime(current_number):
-            count += 1
-            current_prime = current_number
-        current_number += 2
-    return current_prime
+    return prime_sieve(upper_bound(n))[-1]
 
 
 def main():
-    print(prime_finder(10001))
+    print(nth_prime(10001))
 
 
 if __name__ == '__main__':
