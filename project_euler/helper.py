@@ -4,6 +4,7 @@ important functions which I may use again in
 other problems.
 """
 
+
 from math import floor, log
 
 # This decorator will allow the use of memoization.
