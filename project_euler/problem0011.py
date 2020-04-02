@@ -4,24 +4,32 @@ What is the greatest product of four adjacent numbers in the same direction
 """
 
 
-data = []
+from math import prod
 
-with open("problem0011_input.txt", "r") as f:
-    for line in f:
-        data.append(line.split())
+
+def get_grid(numbers):
+    with open(numbers, "r") as f:
+        data = []
+        for line in f:
+            data.append(line.split())
+    return data
 
 
 def right_search(grid):
-    row_result = [[] for y in range(20)]
-    searches_num = 17
-    for i in range(20):
-        for j in range(searches_num):
-            prod = 1
-            for g in range(0, 4):
-                prod *= int(grid[i][j + g])
-            row_result[i].append(prod)
-        row_result[i] = max(row_result[i])
-    return max(row_result)
+    """
+    Returns the largest product of 4 adjacent numbers when
+    moving along the grid horizontally.
+    """
+    result = []
+    for row_index in range(0, len(grid)):
+        result = [max(result)]
+        # Shortens the `result` list every row to save space
+        for index in range(0, len(grid[row_index]) - 4):
+            adj_nums = [int(num) for num in grid[row_index][index:index + 4]]
+            # Converts the 4 adjacent numbers in every row to a list with the
+            # numbers as integers
+            result.append(prod(adj_nums))
+    return max(result)
 
 
 def up_search(grid):
@@ -70,10 +78,7 @@ def top_to_bottom_diag_left(grid):
 
 
 def main():
-    print(right_search(data))
-    print(up_search(data))
-    print(top_to_bottom_diag_right(data))
-    print(top_to_bottom_diag_left(data))
+    data = get_grid("problem0011_input.txt")
 
 
 if __name__ == '__main__':
