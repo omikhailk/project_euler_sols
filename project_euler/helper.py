@@ -14,6 +14,20 @@ golden_ratio = (1 + 5 ** 0.5) / 2
 
 
 @lru_cache(maxsize=None)
+def collatz(num):
+    """
+    Will use `num` to perform the Collatz sequence.
+
+    Will then return how many iterations were carried out.
+    """
+    if num == 1:
+        return 1
+    elif not num % 2:
+        return 1 + collatz(num / 2)
+    return 1 + collatz(3 * num + 1)
+
+
+@lru_cache(maxsize=None)
 def fib(term):
     """
     This is a recursive fibonacci function.
