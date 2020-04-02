@@ -1,4 +1,14 @@
+"""
+What is the largest prime factor of the number 600851475143?
+"""
+
+
 def biggest_prime_factor(num):
+    """
+    Returns the largest prime factor of `num`.
+
+    Uses the trial division method.
+    """
     prime_factors = []
     trial_factor = 2
     while num != 1:
