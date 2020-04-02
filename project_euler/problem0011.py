@@ -15,12 +15,12 @@ def get_grid(numbers):
     return data
 
 
-def right_search(grid):
+def horizontal_search(grid):
     """
     Returns the largest product of 4 adjacent numbers when
     moving along the grid horizontally.
     """
-    result = []
+    result = [0]
     for row_index in range(0, len(grid)):
         result = [max(result)]
         # Shortens the `result` list every row to save space
@@ -32,17 +32,20 @@ def right_search(grid):
     return max(result)
 
 
-def up_search(grid):
-    column_result = [[] for y in range(20)]
-    searches_num = 17
-    for i in range(20):
-        for j in range(searches_num):
-            prod = 1
-            for g in range(0, 4):
-                prod *= int(grid[j + g][i])
-            column_result[i].append(prod)
-        column_result[i] = max(column_result[i])
-    return max(column_result)
+def vertical_search(grid):
+    """
+    Returns the largest product of 4 adjacent numbers when
+    moving along the grid vertically.
+    """
+    result = [0]
+    grid = list(zip(*grid))
+    # Transposes the list, so that all the vertical numbers are in rows
+    for row_index in range(0, len(grid)):
+        result = [max(result)]
+        for index in range(0, len(grid[row_index]) - 4):
+            adj_nums = [int(num) for num in grid[row_index][index:index + 4]]
+            result.append(prod(adj_nums))
+    return max(result)
 
 
 def top_to_bottom_diag_right(grid):
@@ -79,6 +82,7 @@ def top_to_bottom_diag_left(grid):
 
 def main():
     data = get_grid("problem0011_input.txt")
+    pass
 
 
 if __name__ == '__main__':
