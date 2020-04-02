@@ -1,10 +1,14 @@
 """
-What is the sum of the digits of the number 21000?
+What is the sum of the digits of the number 2 ** 1000?
 """
 
 
-result = 0
-for digit in str(2 ** 1000):
-    result += int(digit)
+from helper import get_digits
 
-print(result)
+
+def main():
+    print(sum(get_digits(2 ** 1000)))
+
+
+if __name__ == "__main__":
+    main()

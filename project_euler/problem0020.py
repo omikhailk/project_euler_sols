@@ -4,9 +4,12 @@ Find the sum of the digits in the number 100!
 
 
 from math import factorial
+from helper import get_digits
 
-result = 0
-for digit in str(factorial(100)):
-    result += int(digit)
 
-print(result)
+def main():
+    print(sum(get_digits(factorial(100))))
+
+
+if __name__ == "__main__":
+    main()

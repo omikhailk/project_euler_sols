@@ -6,7 +6,6 @@ other problems.
 
 
 from math import floor, log
-
 # This decorator will allow the use of memoization.
 from functools import lru_cache
 
@@ -74,6 +73,15 @@ def prime_sieve(bound):
         # This is useful if we want the `nth` prime and only have an
         # approximate upper bound
     return sorted(list(nums))
+
+
+def get_digits(num):
+    """
+    Returns all of the digits of `num` as a list of integers
+    """
+    num = str(num)
+    digits = [int(char) for char in num]
+    return digits
 
 
 if __name__ == "__main__":
