@@ -5,32 +5,34 @@ Collatz sequence?
 
 
 def collatz(num):
-    original_num = num
-    iterations = 0
+    """
+    Will use `num` to perform the Collatz sequence.
+
+    Will return `num` and how many iterations it carried out.
+    """
+    original = num
+    iterations = 1
     while num != 1:
-        if num % 2 == 0:
+        if not num % 2:
             num /= 2
         else:
             num = 3 * num + 1
         iterations += 1
-    return (original_num, iterations)
+    return original, iterations
+
+
+def longest_iterations(num_limit):
+    """
+    Will use all numbers under `num_limit` and
+    will return the number that causes the most iterations
+    of the Collatz sequence.
+    """
+    iterations = [collatz(i)[1] for i in range(1, num_limit)]
+    return iterations.index(max(iterations))
 
 
 def main():
-    results = []
-    start_num = 2
-    while start_num < 1000000:
-        results.append(collatz(start_num))
-        start_num += 1
-
-    max_iter = 1
-    for i in results:
-        if i[1] > max_iter:
-            max_iter = i[1]
-
-    for i in results:
-        if i[1] == max_iter:
-            print(i[0])
+    print(longest_iterations(1000000))
 
 
 if __name__ == '__main__':
