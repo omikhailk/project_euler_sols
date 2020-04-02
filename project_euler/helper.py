@@ -13,7 +13,7 @@ from functools import lru_cache
 golden_ratio = (1 + 5 ** 0.5) / 2
 
 
-@lru_cache(maxsize=3000)
+@lru_cache(maxsize=None)
 def fib(term):
     """
     This is a recursive fibonacci function.
