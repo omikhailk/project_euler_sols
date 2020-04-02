@@ -6,17 +6,15 @@ Find the product abc.
 
 def pythagorean_triplets(sum_value):
     """
-    This program will find the three Pythagorean
-    triplets whose sum will equal sum_value.
+    Will find the three Pythagorean
+    triplets whose sum will equal `sum_value`.
 
-    Then the program will multiply the three
-    triplets to get the product xyz. Which it
-    will output.
+    Will then multiply the triplets and return them.
     """
-    limits = 1001
-    for x in range(1, limits):
-        for y in range(x, limits):
-            for z in range(y, limits):
+    limit = sum_value + 1
+    for x in range(1, limit):
+        for y in range(x, limit):
+            for z in range(y, limit):
                 if x ** 2 + y ** 2 == z ** 2:
                     if x + y + z == sum_value:
                         return x * y * z
