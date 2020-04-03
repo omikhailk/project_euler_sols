@@ -48,41 +48,53 @@ def vertical_search(grid):
     return max(result)
 
 
-def top_to_bottom_diag_right(grid):
-    diag_result = [[] for y in range(20)]
-    searches_num = 17
-    for i in range(20):
-        for j in range(searches_num):
-            prod = 1
-            for g in range(0, 4):
-                try:
-                    prod *= int(grid[i + g][j + g])
-                except IndexError as e:
-                    pass
-            diag_result[i].append(prod)
-        diag_result[i] = max(diag_result[i])
-    return max(diag_result)
+def left_to_right_diag(grid):
+    """
+   Returns the largest product in the grid of 4 adjacent numbers
+   in a diagonal (from left to right).
+    """
+    diag = []
+    for col in range(0, len(grid), 4):
+        four_adj_nums = []
+        for row in range(0, len(grid) - 3):
+            for i in range(0, 4):
+                four_adj_nums.append(grid[col + i][row + i])
+        diag.append(four_adj_nums)
+    nums = []
+    for index in range(0, len(diag)):
+        for sub in range(0, len(diag[index]) - 4, 4):
+            nums.append([int(i) for i in diag[index][sub:sub+4]])
+    products = [prod(i) for i in nums]
+    return max(products)
 
 
-def top_to_bottom_diag_left(grid):
-    diag_result = [[] for y in range(20)]
-    searches_num = 17
-    for i in range(20):
-        for j in range(searches_num):
-            prod = 1
-            for g in range(0, 4):
-                try:
-                    prod *= int(grid[i + g][j - g])
-                except IndexError as e:
-                    pass
-            diag_result[i].append(prod)
-        diag_result[i] = max(diag_result[i])
-    return max(diag_result)
+def right_to_left_diag(grid):
+    """
+    Returns the largest product in the grid of 4 adjacent numbers
+    in a diagonal (from right to left).
+    """
+    diag = []
+    for col in range(len(grid) - 1, 0, -4):
+        four_adj_nums = []
+        for row in range(0, len(grid) - 3):
+            for i in range(0, 4):
+                four_adj_nums.append(grid[col - i][row + i])
+        diag.append(four_adj_nums)
+    nums = []
+    for index in range(0, len(diag)):
+        for sub in range(0, len(diag[index]) - 4, 4):
+            nums.append([int(i) for i in diag[index][sub:sub+4]])
+    products = [prod(i) for i in nums]
+    return max(products)
 
 
 def main():
     data = get_grid("problem0011_input.txt")
-    pass
+    print(horizontal_search(data))
+    print(vertical_search(data))
+    print(right_to_left_diag(data))
+    print(left_to_right_diag(data))
+
 
 
 if __name__ == '__main__':
