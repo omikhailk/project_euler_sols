@@ -10,7 +10,7 @@ from math import floor, log
 from functools import lru_cache
 
 
-golden_ratio = (1 + 5 ** 0.5) / 2
+GOLDEN_RATIO = (1 + 5 ** 0.5) / 2
 
 
 @lru_cache(maxsize=None)
