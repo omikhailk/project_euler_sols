@@ -40,12 +40,13 @@ def fib(term):
         return fib(term - 1) + fib(term - 2)
 
 
-def upper_bound(nth):
+def prime_upper_bound(nth):
     """
     Returns the term and the upper bound for the `nth`
     prime number. This information is returned as a dictionary.
 
-    The upper bound was found from shorturl.at/aqBHQ
+    The upper bound was found from
+    https://math.stackexchange.com/questions/1270814/bounds-for-n-th-prime
     """
     return {
         "index": nth,
