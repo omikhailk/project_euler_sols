@@ -17,9 +17,7 @@ def biggest_prime_factor(num):
             num /= trial_factor
         else:
             trial_factor += 1
-        if len(prime_factors) > 1:
-            prime_factors = [prime_factors[-1]]
-    return prime_factors
+    return prime_factors[-1]
 
 
 def main():
