@@ -5,18 +5,7 @@ million, find the sum of the even-valued terms.
 """
 
 
-from helper import fib, golden_ratio
-from math import floor, log
-
-
-def index_limit_det(limit):
-    """
-    Determines the term which was responsible for
-    the (`limit` number)'s fibonacci value.
-    The formula used can be found on:
-    https://bit.ly/2p3Ectu
-    """
-    return floor(log((limit * (5 ** 0.5) + 0.5), golden_ratio))
+from helper import fib, fib_term_from_value
 
 
 def even_sum(limit):
@@ -25,7 +14,7 @@ def even_sum(limit):
     in the fibonacci sequence which are below
     the `limit` number.
     """
-    terms = [fib(i) for i in range(1, index_limit_det(limit)) if not fib(i) % 2]
+    terms = [fib(i) for i in range(1, fib_term_from_value(limit)) if not fib(i) % 2]
     return sum(terms)
     
 

@@ -40,6 +40,16 @@ def fib(term):
         return fib(term - 1) + fib(term - 2)
 
 
+def fib_term_from_value(n):
+    """
+    Finds the term x such that fib(x) == n
+
+    The formula used can be found on:
+    https://en.wikipedia.org/wiki/Fibonacci_number#Computation_by_rounding
+    """
+    return floor(log((n * (5 ** 0.5) + 0.5), GOLDEN_RATIO))
+
+
 def prime_upper_bound(nth):
     """
     Returns the term and the upper bound for the `nth`
