@@ -29,16 +29,19 @@ def collatz(num):
 
 
 @lru_cache(maxsize=None)
-def fib(term):
+def fib(n):
     """
-    This is a recursive fibonacci function.
+    A recursive fibonacci function.
+
+    In this case the fibonacci functions starts as:
+    1, 2, 3, 5...
     """
-    if term == 1:
+    if n == 1:
         return 1
-    if term == 2:
+    if n == 2:
         return 2
-    elif term > 1:
-        return fib(term - 1) + fib(term - 2)
+    else:
+        return fib(n - 1) + fib(n - 2)
 
 
 def fib_term_from_value(n):
