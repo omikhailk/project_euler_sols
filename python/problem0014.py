@@ -1,19 +1,19 @@
 """
-Which starting number, under one million, produces the longest chain in the
-Collatz sequence?
+Which starting number, under one million, produces
+the longest chain in the Collatz sequence?
 """
 
 
 from helper import collatz
 
 
-def longest_iterations(num_limit):
+def longest_iterations(limit):
     """
-    Will use all numbers under `num_limit` and
-    will return the number that causes the most iterations
-    of the Collatz sequence.
+    Will use all numbers under `limit` and will return
+    the number that causes the most iterations of the
+    Collatz sequence.
     """
-    iterations = [collatz(i) for i in range(1, num_limit)]
+    iterations = [collatz(i) for i in range(1, limit)]
     return iterations.index(max(iterations))
 
 
