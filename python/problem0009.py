@@ -6,8 +6,8 @@ Find the product abc.
 
 def pythagorean_triplets(sum_value):
     """
-    Will find the three Pythagorean
-    triplets whose sum will equal `sum_value`.
+    Will find the three Pythagorean triplets
+    whose sum will equal `sum_value`.
 
     Will then multiply the triplets and return them.
     """
