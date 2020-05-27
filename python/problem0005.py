@@ -4,19 +4,18 @@ numbers from 1 to 20?
 """
 
 
-def smallest_multiple(num_limit):
+def smallest_multiple(limit):
     """
-    Will return the smallest
-    number that can be evenly divided by all
-    the numbers from 1 to and including `num_limit`.
+    Will return the smallest number that can be evenly divided
+    by all the numbers from 1 to and including `num_limit`.
     """
-    numbers = [i for i in range(1, num_limit + 1)]
+    numbers = [i for i in range(1, limit + 1)]
     starting_num = 2
 
     while True:
         for case in numbers:
             if not starting_num % case:
-                if case == num_limit:
+                if case == limit:
                     return starting_num
             else:
                 break
