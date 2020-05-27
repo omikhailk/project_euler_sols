@@ -7,7 +7,7 @@ numbers from 1 to 20?
 def smallest_multiple(limit):
     """
     Will return the smallest number that can be evenly divided
-    by all the numbers from 1 to and including `num_limit`.
+    by all the numbers from 1 to and including `limit`.
     """
     numbers = [i for i in range(1, limit + 1)]
     starting_num = 2
