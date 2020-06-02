@@ -54,17 +54,17 @@ def fib_term_from_value(n):
     return floor(log((n * (5 ** 0.5) + 0.5), GOLDEN_RATIO))
 
 
-def prime_upper_bound(nth):
+def prime_upper_bound(n):
     """
-    Returns the term and the upper bound for the `nth`
-    prime number. This information is returned as a dictionary.
+    Returns the index of the prime number (`n`) in question as well as the
+    upper bound when searching for this `n`'th prime number.
 
     The upper bound was found from
     https://math.stackexchange.com/questions/1270814/bounds-for-n-th-prime
     """
     return {
-        "index": nth,
-        "upper_bound": floor(nth * (log(nth) + log(log(nth))))
+        "index": n,
+        "upper_bound": floor(n * (log(n) + log(log(n))))
     }
 
 
@@ -74,13 +74,15 @@ def prime_sieve(bound):
     including the upper bound.
     """
     # The if-else below allows the function to either find primes up-till
-    # a N-th prime, or just find primes below a certain value.
+    # a `n`-th prime, or just find primes below a certain value.
     # This allows usage of `upper_bound()` in conjunction with this function
     if type(bound) == dict:
-        nth = bound["index"]
+        n = bound["index"]
         up_bound = bound["upper_bound"]
     else:
         up_bound = bound
+
+    # The actual Sieve of Eratosthenes algorithm
 
     nums = {i for i in range(3, up_bound, 2)} | {2}
     # Added on the first prime of 2, since it wasn't included
@@ -96,10 +98,11 @@ def prime_sieve(bound):
                 p = x
                 break
         continue
+
     if type(bound) == dict:
-        return sorted(list(nums))[:nth]
-        # This will give us the primes up-till the `nth` prime
-        # This is useful if we want the `nth` prime and only have an
+        return sorted(list(nums))[:n]
+        # This will give us the primes up-till but not including the `n`'th prime
+        # This is useful if we want the `n`'th prime but only have an
         # approximate upper bound
     return sorted(list(nums))
 
