@@ -96,6 +96,5 @@ def main():
     print(left_to_right_diag(data))
 
 
-
 if __name__ == '__main__':
     main()
