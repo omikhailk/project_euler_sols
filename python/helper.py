@@ -5,13 +5,23 @@ other problems.
 """
 
 
-from math import floor, log
+from math import floor, log, comb
 
 # This decorator will allow the use of memoization.
 from functools import lru_cache
 
 
 GOLDEN_RATIO = (1 + 5 ** 0.5) / 2
+
+
+def triangular_num(term):
+    """
+    Generates the triangular number which is corresponding to T_term.
+
+    Uses the formula which involves binomial coefficients:
+    (n + 1) C (2) == (n + 1) choose (2)
+    """
+    return comb(term + 1, 2)
 
 
 @lru_cache(maxsize=None)
