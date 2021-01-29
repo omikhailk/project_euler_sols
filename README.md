@@ -2,4 +2,4 @@
 
 My solutions for the Project Euler problems.
 
-The solutions are in Python and Go so far.
+The solutions are only in Python so far.
