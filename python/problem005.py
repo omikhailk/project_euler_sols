@@ -4,23 +4,15 @@ numbers from 1 to 20?
 """
 
 
+from math import lcm
+
+
 def smallest_multiple(limit):
     """
     Will return the smallest number that can be evenly divided
     by all the numbers from 1 to and including `limit`.
     """
-    numbers = [i for i in range(1, limit + 1)]
-    starting_num = 2
-
-    while True:
-        for case in numbers:
-            if not starting_num % case:
-                if case == limit:
-                    return starting_num
-            else:
-                break
-        starting_num += 1
-        continue
+    return lcm(*[i for i in range(1, limit + 1)])
 
 
 def main():
