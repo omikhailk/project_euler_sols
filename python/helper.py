@@ -100,8 +100,8 @@ def prime_sieve(bound):
     p = 3
 
     while p ** 2 < up_bound:
-        p_mults = {i for i in range(p ** 2, up_bound, 2 * p)}
-        nums = nums.difference(p_mults)
+        p_multiples = {i for i in range(p ** 2, up_bound, 2 * p)}
+        nums = nums.difference(p_multiples)
         # Removes all the marked numbers from `nums`
         for x in sorted(list(nums)):
             if x > p:
