@@ -14,7 +14,7 @@ def longest_iterations(limit):
     Collatz sequence.
     """
     iterations = [collatz(i) for i in range(1, limit)]
-    return iterations.index(max(iterations))
+    return iterations.index(max(iterations)) + 1
 
 
 def main():
