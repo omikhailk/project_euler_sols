@@ -37,7 +37,7 @@ def greatest_product(line_nums):
 
 
 def main():
-    print(greatest_product(get_digits("problem0008_input.txt")))
+    print(greatest_product(get_digits("problem008_input.txt")))
 
 
 if __name__ == '__main__':
