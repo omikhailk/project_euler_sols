@@ -89,7 +89,7 @@ def right_to_left_diag(grid):
 
 
 def main():
-    data = get_grid("problem0011_input.txt")
+    data = get_grid("problem011_input.txt")
     print(horizontal_search(data))
     print(vertical_search(data))
     print(right_to_left_diag(data))

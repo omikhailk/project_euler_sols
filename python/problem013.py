@@ -26,7 +26,7 @@ def digit_limited_sum(num_list, digit_limit):
 
 
 def main():
-    numbers = get_nums('problem0013_input.txt')
+    numbers = get_nums('problem013_input.txt')
     print(digit_limited_sum(numbers, 10))
 
 
